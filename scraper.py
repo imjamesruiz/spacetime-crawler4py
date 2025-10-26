@@ -1,5 +1,21 @@
 import re
 from urllib.parse import urlparse
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urldefrag
+from utils.response import Response
+
+IGNORED_EXTENSIONS = [
+    # Document/Media files
+    'pdf', 'docx', 'doc', 'ppt', 'pptx', 'xls', 'xlsx', 'csv', 'rar', 'zip',
+    # Images/Audio/Video
+    'jpg', 'jpeg', 'png', 'gif', 'tif', 'tiff', 'bmp', 'webp', 'ico', 
+    'mp3', 'wav', 'ogg', 'mp4', 'webm', 'avi', 'mov', 'flv', 
+    # Scripts/Styles
+    'css', 'js', 'xml', 'json', 'py', 'java', 'c', 'cpp', 'h', 'hpp', 
+    # Other common non-HTML
+    'txt', 'rss', 'atom', 'php', 
+]
+
 
 def scraper(url, resp):
     links = extract_next_links(url, resp)
@@ -15,7 +31,25 @@ def extract_next_links(url, resp):
     #         resp.raw_response.url: the url, again
     #         resp.raw_response.content: the content of the page!
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
-    return list()
+    
+    next_links = []
+    
+    if resp.status != 200:
+        return []
+    
+    if resp.raw_response and resp.raw_response.content:
+        soup = BeautifulSoup(resp.raw_response.content, 'lxml')
+        
+        for link in soup.find_all('a', href=True):
+            href = link.get('href')
+            defragmented_URL, _ = urldefrag(href)
+            absolute_URL = urljoin(url, defragmented_URL)
+            
+            if is_valid(absolute_URL):
+                next_links.append(absolute_URL)
+                
+
+    return next_links
 
 def is_valid(url):
     # Decide whether to crawl this url or not. 
@@ -24,6 +58,9 @@ def is_valid(url):
     try:
         parsed = urlparse(url)
         if parsed.scheme not in set(["http", "https"]):
+            return False
+        
+        if not re.match(r".*\.ics\.uci\.edu$", parsed.netloc.lower()):
             return False
         return not re.match(
             r".*\.(css|js|bmp|gif|jpe?g|ico"
@@ -38,3 +75,4 @@ def is_valid(url):
     except TypeError:
         print ("TypeError for ", parsed)
         raise
+
