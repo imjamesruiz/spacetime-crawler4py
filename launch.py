@@ -1,19 +1,22 @@
-from configparser import ConfigParser
 from argparse import ArgumentParser
+from configparser import ConfigParser
 
-from utils.server_registration import get_cache_server
 from utils.config import Config
-from crawler import Crawler
+from utils.frontier import Frontier
+from utils.worker import Worker
 
+import sys
+sys.path.append("/home/ics-home/.local/lib/python3.12/site-packages")
 
 def main(config_file, restart):
     cparser = ConfigParser()
     cparser.read(config_file)
     config = Config(cparser)
-    config.cache_server = get_cache_server(config, restart)
-    crawler = Crawler(config, restart)
-    crawler.start()
 
+    frontier = Frontier(config, restart)
+    worker = Worker(0, config, frontier)
+    worker.start()
+    worker.join()
 
 if __name__ == "__main__":
     parser = ArgumentParser()

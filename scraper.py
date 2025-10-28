@@ -38,7 +38,8 @@ def extract_next_links(url, resp):
         return []
     
     if resp.raw_response and resp.raw_response.content:
-        soup = BeautifulSoup(resp.raw_response.content, 'lxml')
+        soup = BeautifulSoup(resp.raw_response.content, 'html.parser')
+
         
         for link in soup.find_all('a', href=True):
             href = link.get('href')
