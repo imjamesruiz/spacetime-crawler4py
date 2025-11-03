@@ -9,14 +9,16 @@ from utils.response import Response
 IGNORED_EXTENSIONS = [
     # Document/Media files
     'pdf', 'docx', 'doc', 'ppt', 'pptx', 'xls', 'xlsx', 'csv', 'rar', 'zip',
+    'gz', 'tar', 'tgz', 'bz2', '7z', 'iso',
     # Images/Audio/Video
     'jpg', 'jpeg', 'png', 'gif', 'tif', 'tiff', 'bmp', 'webp', 'ico', 
-    'mp3', 'wav', 'ogg', 'mp4', 'webm', 'avi', 'mov', 'flv', 
+    'mp3', 'wav', 'ogg', 'mp4', 'webm', 'avi', 'mov', 'flv', 'wmv',
     # Scripts/Styles
     'css', 'js', 'xml', 'json', 'py', 'java', 'c', 'cpp', 'h', 'hpp', 
     # Other common non-HTML
-    'txt', 'rss', 'atom', 'php', 
+    'txt', 'rss', 'atom', 'php'
 ]
+
 
 
 unique_urls = set()
@@ -74,20 +76,38 @@ def extract_next_links(url, resp):
     if resp.status != 200 or resp.raw_response is None:
         return []
 
-    try:
-        soup = BeautifulSoup(resp.raw_response.content, 'html.parser')
+    parsed_url = urlparse(url)
+    path = parsed_url.path.lower()
+    if any(path.endswith(f".{ext}") for ext in IGNORED_EXTENSIONS):
+        return []  
 
+    if hasattr(resp.raw_response, "headers"):
+        content_type = resp.raw_response.headers.get("Content-Type", "").lower()
+        if "text/html" not in content_type:
+            return []
+        try:
+            content_length = int(resp.raw_response.headers.get("Content-Length", 0))
+            if content_length > 2_000_000:  # skip very large pages
+                return []
+        except ValueError:
+            pass
+
+    try:
+        # Parse HTML safely
+        soup = BeautifulSoup(resp.raw_response.content, "html.parser")
         for s in soup(["script", "style", "noscript"]):
             s.decompose()
 
-        text = soup.get_text(separator=' ')
+        text = soup.get_text(separator=" ", strip=True)
+        if not text or len(text) < 50:
+            return [] 
+
         words = re.findall(r"[A-Za-z]+", text.lower())
         words = [w for w in words if w not in STOPWORDS]
 
         defragged_url, _ = urldefrag(url)
         if defragged_url not in unique_urls:
             unique_urls.add(defragged_url)
-
             word_counts.update(words)
 
             wc = len(words)
@@ -98,13 +118,14 @@ def extract_next_links(url, resp):
             if hostname.endswith(".uci.edu"):
                 subdomain_counts[hostname] += 1
 
-        for tag in soup.find_all('a', href=True):
-            href = tag.get('href')
+        for tag in soup.find_all("a", href=True):
+            href = tag.get("href")
             if not href:
                 continue
             defragged, _ = urldefrag(href)
             absolute = urljoin(url, defragged)
-            next_links.append(absolute)
+            cleaned, _ = urldefrag(absolute)
+            next_links.append(cleaned)
 
     except Exception as e:
         print(f"[extract_next_links] Error parsing {url}: {e}")
@@ -112,10 +133,25 @@ def extract_next_links(url, resp):
     return next_links
 
 
+def save_progress():
+    """
+    Save crawler analytics periodically to a JSON file.
+    """
+    try:
+        data = {
+            "unique_pages": len(unique_urls),
+            "longest_page": longest_page,
+            "top_50_words": word_counts.most_common(50),
+            "subdomains": dict(sorted(subdomain_counts.items()))
+        }
+        with open("crawler_stats.json", "w") as f:
+            json.dump(data, f, indent=2)
+        print(f"[save_progress] Saved {len(unique_urls)} pages so far.")
+    except Exception as e:
+        print(f"[save_progress] Error saving stats: {e}")
+
+
 def is_valid(url):
-    # Decide whether to crawl this url or not. 
-    # If you decide to crawl it, return True; otherwise return False.
-    # There are already some conditions that return False.
     try:
         url, _ = urldefrag(url)
         parsed = urlparse(url)
@@ -137,7 +173,6 @@ def is_valid(url):
         if any(path.endswith(f".{ext}") for ext in IGNORED_EXTENSIONS):
             return False
 
-        # avoid the calendar, etc
         query = (parsed.query or "").lower()
         if any(keyword in query for keyword in [
             "tribe-bar-date", "ical", "outlook-ical",
@@ -153,19 +188,15 @@ def is_valid(url):
         return False
 
 
-def save_progress():
+def finalize_crawl():
     """
-    Save crawler analytics periodically to a JSON file.
+    Called manually after the crawl completes to save final results.
     """
-    try:
-        data = {
-            "unique_pages": len(unique_urls),
-            "longest_page": longest_page,
-            "top_50_words": word_counts.most_common(50),
-            "subdomains": dict(sorted(subdomain_counts.items()))
-        }
-        with open("crawler_stats.json", "w") as f:
-            json.dump(data, f, indent=2)
-        print(f"[save_progress] Saved {len(unique_urls)} pages so far.")
-    except Exception as e:
-        print(f"[save_progress] Error saving stats: {e}")
+    save_progress()
+    print(f"Total unique pages: {len(unique_urls)}")
+    print(f"Longest page: {longest_page['url']} ({longest_page['word_count']} words)")
+    print("Top 10 words:")
+    for w, c in word_counts.most_common(10):
+        print(f"{w}: {c}")
+
+

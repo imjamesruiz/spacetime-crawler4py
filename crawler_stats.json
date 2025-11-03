@@ -1,0 +1,276 @@
+{
+  "unique_pages": 4000,
+  "longest_page": {
+    "url": "http://fr.ics.uci.edu/data/www.ireport.com.tgz",
+    "word_count": 24172781
+  },
+  "top_50_words": [
+    [
+      "t",
+      2863044
+    ],
+    [
+      "p",
+      2756406
+    ],
+    [
+      "x",
+      2745105
+    ],
+    [
+      "s",
+      2739732
+    ],
+    [
+      "u",
+      2693050
+    ],
+    [
+      "c",
+      2650364
+    ],
+    [
+      "v",
+      2643906
+    ],
+    [
+      "r",
+      2643684
+    ],
+    [
+      "z",
+      2620255
+    ],
+    [
+      "q",
+      2613952
+    ],
+    [
+      "h",
+      2593594
+    ],
+    [
+      "w",
+      2586876
+    ],
+    [
+      "j",
+      2586180
+    ],
+    [
+      "b",
+      2586001
+    ],
+    [
+      "e",
+      2579505
+    ],
+    [
+      "n",
+      2566386
+    ],
+    [
+      "o",
+      2562441
+    ],
+    [
+      "g",
+      2548807
+    ],
+    [
+      "l",
+      2514741
+    ],
+    [
+      "m",
+      2514020
+    ],
+    [
+      "d",
+      2512414
+    ],
+    [
+      "f",
+      2505648
+    ],
+    [
+      "k",
+      2426712
+    ],
+    [
+      "y",
+      2401216
+    ],
+    [
+      "le",
+      117523
+    ],
+    [
+      "ju",
+      51749
+    ],
+    [
+      "et",
+      34184
+    ],
+    [
+      "ph",
+      32531
+    ],
+    [
+      "ut",
+      31058
+    ],
+    [
+      "cs",
+      27457
+    ],
+    [
+      "qp",
+      26915
+    ],
+    [
+      "gg",
+      26326
+    ],
+    [
+      "uu",
+      26296
+    ],
+    [
+      "pq",
+      26160
+    ],
+    [
+      "ah",
+      26155
+    ],
+    [
+      "uc",
+      26059
+    ],
+    [
+      "null",
+      26024
+    ],
+    [
+      "yx",
+      25619
+    ],
+    [
+      "us",
+      25438
+    ],
+    [
+      "pp",
+      25328
+    ],
+    [
+      "qx",
+      25161
+    ],
+    [
+      "xx",
+      25155
+    ],
+    [
+      "pr",
+      25153
+    ],
+    [
+      "gx",
+      25003
+    ],
+    [
+      "pd",
+      24974
+    ],
+    [
+      "ax",
+      24843
+    ],
+    [
+      "bx",
+      24831
+    ],
+    [
+      "ai",
+      24430
+    ],
+    [
+      "uj",
+      24339
+    ],
+    [
+      "research",
+      24329
+    ]
+  ],
+  "subdomains": {
+    "accessibility.ics.uci.edu": 6,
+    "acoi.ics.uci.edu": 120,
+    "archive.ics.uci.edu": 2,
+    "asterix.ics.uci.edu": 5,
+    "cert.ics.uci.edu": 14,
+    "chenli.ics.uci.edu": 19,
+    "cloudberry.ics.uci.edu": 9,
+    "cml.ics.uci.edu": 112,
+    "code.ics.uci.edu": 16,
+    "courselisting.ics.uci.edu": 2,
+    "create.ics.uci.edu": 7,
+    "cs.ics.uci.edu": 16,
+    "cwicsocal18.ics.uci.edu": 1,
+    "cyberclub.ics.uci.edu": 4,
+    "ds4all.ics.uci.edu": 4,
+    "duttgroup.ics.uci.edu": 1,
+    "dynamo.ics.uci.edu": 1,
+    "emj.ics.uci.edu": 35,
+    "evoke.ics.uci.edu": 6,
+    "flamingo.ics.uci.edu": 12,
+    "fr.ics.uci.edu": 28,
+    "futurehealth.ics.uci.edu": 352,
+    "grape.ics.uci.edu": 32,
+    "graphmod.ics.uci.edu": 1,
+    "hack.ics.uci.edu": 1,
+    "hai.ics.uci.edu": 8,
+    "hpi.ics.uci.edu": 6,
+    "icde2023.ics.uci.edu": 1,
+    "industryshowcase.ics.uci.edu": 25,
+    "informatics.ics.uci.edu": 1,
+    "insite.ics.uci.edu": 1,
+    "ipubmed.ics.uci.edu": 1,
+    "isg.ics.uci.edu": 193,
+    "jgarcia.ics.uci.edu": 41,
+    "luci.ics.uci.edu": 6,
+    "mailman.ics.uci.edu": 6,
+    "malek.ics.uci.edu": 3,
+    "mcs.ics.uci.edu": 14,
+    "mds.ics.uci.edu": 9,
+    "mhcid.ics.uci.edu": 22,
+    "mswe.ics.uci.edu": 10,
+    "nalini.ics.uci.edu": 8,
+    "ngs.ics.uci.edu": 83,
+    "oai.ics.uci.edu": 7,
+    "psearch.ics.uci.edu": 2,
+    "riscit.ics.uci.edu": 2,
+    "seal.ics.uci.edu": 9,
+    "sherlock.ics.uci.edu": 8,
+    "stairs.ics.uci.edu": 4,
+    "stat.ics.uci.edu": 13,
+    "student-council.ics.uci.edu": 7,
+    "summeracademy.ics.uci.edu": 6,
+    "tastier.ics.uci.edu": 1,
+    "tutoring.ics.uci.edu": 5,
+    "ugradforms.ics.uci.edu": 1,
+    "unite.ics.uci.edu": 1,
+    "vision.ics.uci.edu": 216,
+    "wics.ics.uci.edu": 46,
+    "www-db.ics.uci.edu": 11,
+    "www.cs.uci.edu": 8,
+    "www.ics.uci.edu": 1061,
+    "www.informatics.ics.uci.edu": 1,
+    "www.informatics.uci.edu": 1333,
+    "www.stat.uci.edu": 8,
+    "xtune.ics.uci.edu": 6
+  }
+}
