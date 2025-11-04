@@ -202,6 +202,20 @@ def is_valid(url):
         if len(url) > 2000 or url.count('/') > 12:
             return False
 
+        # WordPress/Calendar pagination and date traps
+        if re.search(r"/page/\d+", path):
+            return False
+        if re.search(r"/(20\d{2})/(\d{2})/(\d{2})/", path):  # /YYYY/MM/DD/
+            return False
+        if re.search(r"/(20\d{2})-(\d{2})-(\d{2})/", path):  # /YYYY-MM-DD/
+            return False
+        if "/events/" in path and re.search(r"\d{4}-\d{2}-\d{2}", path):
+            return False
+        if any(seg in path for seg in ["/category/", "/author/", "/calendar/"]):
+            if "/page/" in path or "/feed/" in path:
+                return False
+
+
 
         return True
 
