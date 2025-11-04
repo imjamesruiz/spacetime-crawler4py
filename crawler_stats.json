@@ -1,276 +1,293 @@
 {
-  "unique_pages": 4000,
+  "unique_pages": 8450,
   "longest_page": {
-    "url": "http://fr.ics.uci.edu/data/www.ireport.com.tgz",
-    "word_count": 24172781
+    "url": "https://www.ics.uci.edu/~seal/projects/covert/Covert_Desktop-2.3.dmg",
+    "word_count": 20560517
   },
   "top_50_words": [
     [
-      "t",
-      2863044
-    ],
-    [
-      "p",
-      2756406
-    ],
-    [
-      "x",
-      2745105
-    ],
-    [
-      "s",
-      2739732
-    ],
-    [
-      "u",
-      2693050
-    ],
-    [
       "c",
-      2650364
-    ],
-    [
-      "v",
-      2643906
-    ],
-    [
-      "r",
-      2643684
-    ],
-    [
-      "z",
-      2620255
-    ],
-    [
-      "q",
-      2613952
-    ],
-    [
-      "h",
-      2593594
-    ],
-    [
-      "w",
-      2586876
-    ],
-    [
-      "j",
-      2586180
-    ],
-    [
-      "b",
-      2586001
-    ],
-    [
-      "e",
-      2579505
-    ],
-    [
-      "n",
-      2566386
-    ],
-    [
-      "o",
-      2562441
-    ],
-    [
-      "g",
-      2548807
-    ],
-    [
-      "l",
-      2514741
-    ],
-    [
-      "m",
-      2514020
-    ],
-    [
-      "d",
-      2512414
+      4294213
     ],
     [
       "f",
-      2505648
+      3941732
     ],
     [
-      "k",
-      2426712
+      "b",
+      3765299
+    ],
+    [
+      "e",
+      3681226
+    ],
+    [
+      "d",
+      3185516
+    ],
+    [
+      "g",
+      2837428
+    ],
+    [
+      "o",
+      2648569
     ],
     [
       "y",
-      2401216
+      2645263
     ],
     [
-      "le",
-      117523
+      "h",
+      2624855
     ],
     [
-      "ju",
-      51749
+      "p",
+      2600872
     ],
     [
-      "et",
-      34184
+      "m",
+      2503022
     ],
     [
-      "ph",
-      32531
+      "n",
+      2450531
     ],
     [
-      "ut",
-      31058
+      "l",
+      2409606
     ],
     [
-      "cs",
-      27457
+      "q",
+      2404905
     ],
     [
-      "qp",
-      26915
+      "s",
+      2401144
     ],
     [
-      "gg",
-      26326
+      "r",
+      2389123
     ],
     [
-      "uu",
-      26296
+      "j",
+      2341220
     ],
     [
-      "pq",
-      26160
+      "x",
+      2334716
     ],
     [
-      "ah",
-      26155
+      "w",
+      2320919
     ],
     [
-      "uc",
-      26059
+      "v",
+      2312316
     ],
     [
-      "null",
-      26024
+      "t",
+      2302525
     ],
     [
-      "yx",
-      25619
+      "u",
+      2291772
     ],
     [
-      "us",
-      25438
+      "k",
+      2261606
     ],
     [
-      "pp",
-      25328
+      "z",
+      2179222
     ],
     [
-      "qx",
-      25161
+      "kz",
+      466716
     ],
     [
-      "xx",
-      25155
+      "def",
+      228939
     ],
     [
-      "pr",
-      25153
+      "ff",
+      197400
     ],
     [
-      "gx",
-      25003
+      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      172758
     ],
     [
-      "pd",
-      24974
+      "fc",
+      154282
     ],
     [
-      "ax",
-      24843
+      "fe",
+      148001
     ],
     [
-      "bx",
-      24831
+      "fa",
+      112584
     ],
     [
-      "ai",
-      24430
+      "lineto",
+      104842
     ],
     [
-      "uj",
-      24339
+      "dup",
+      104311
     ],
     [
-      "research",
-      24329
+      "exch",
+      100813
+    ],
+    [
+      "ln",
+      99801
+    ],
+    [
+      "pop",
+      98716
+    ],
+    [
+      "agmcore",
+      87954
+    ],
+    [
+      "np",
+      85375
+    ],
+    [
+      "notdef",
+      84284
+    ],
+    [
+      "moveto",
+      76093
+    ],
+    [
+      "get",
+      75040
+    ],
+    [
+      "dc",
+      74066
+    ],
+    [
+      "li",
+      73548
+    ],
+    [
+      "gs",
+      73154
+    ],
+    [
+      "gr",
+      72301
+    ],
+    [
+      "st",
+      70649
+    ],
+    [
+      "fo",
+      67569
+    ],
+    [
+      "fm",
+      67530
+    ],
+    [
+      "setgray",
+      67074
+    ],
+    [
+      "newpath",
+      66885
     ]
   ],
   "subdomains": {
-    "accessibility.ics.uci.edu": 6,
-    "acoi.ics.uci.edu": 120,
-    "archive.ics.uci.edu": 2,
-    "asterix.ics.uci.edu": 5,
-    "cert.ics.uci.edu": 14,
-    "chenli.ics.uci.edu": 19,
-    "cloudberry.ics.uci.edu": 9,
-    "cml.ics.uci.edu": 112,
+    "accessibility.ics.uci.edu": 7,
+    "acoi.ics.uci.edu": 122,
+    "archive-beta.ics.uci.edu": 1,
+    "archive.ics.uci.edu": 45,
+    "asterix.ics.uci.edu": 7,
+    "betapro.proteomics.ics.uci.edu": 1,
+    "cdb.ics.uci.edu": 1,
+    "cert.ics.uci.edu": 27,
+    "checkin.ics.uci.edu": 1,
+    "chenli.ics.uci.edu": 20,
+    "circadiomics.ics.uci.edu": 1,
+    "cloudberry.ics.uci.edu": 35,
+    "cml.ics.uci.edu": 157,
     "code.ics.uci.edu": 16,
+    "computableplant.ics.uci.edu": 21,
     "courselisting.ics.uci.edu": 2,
     "create.ics.uci.edu": 7,
-    "cs.ics.uci.edu": 16,
-    "cwicsocal18.ics.uci.edu": 1,
-    "cyberclub.ics.uci.edu": 4,
-    "ds4all.ics.uci.edu": 4,
-    "duttgroup.ics.uci.edu": 1,
-    "dynamo.ics.uci.edu": 1,
-    "emj.ics.uci.edu": 35,
+    "cs.ics.uci.edu": 17,
+    "cwicsocal18.ics.uci.edu": 22,
+    "cyberclub.ics.uci.edu": 11,
+    "cybert.ics.uci.edu": 1,
+    "dgillen.ics.uci.edu": 1,
+    "ds4all.ics.uci.edu": 5,
+    "duttgroup.ics.uci.edu": 26,
+    "dynamo.ics.uci.edu": 8,
+    "emj.ics.uci.edu": 44,
     "evoke.ics.uci.edu": 6,
-    "flamingo.ics.uci.edu": 12,
-    "fr.ics.uci.edu": 28,
-    "futurehealth.ics.uci.edu": 352,
-    "grape.ics.uci.edu": 32,
+    "flamingo.ics.uci.edu": 112,
+    "fr.ics.uci.edu": 11,
+    "futurehealth.ics.uci.edu": 354,
+    "grape.ics.uci.edu": 277,
+    "graphics.ics.uci.edu": 1,
     "graphmod.ics.uci.edu": 1,
-    "hack.ics.uci.edu": 1,
-    "hai.ics.uci.edu": 8,
+    "hai.ics.uci.edu": 13,
+    "hobbes.ics.uci.edu": 1,
     "hpi.ics.uci.edu": 6,
-    "icde2023.ics.uci.edu": 1,
+    "icde2023.ics.uci.edu": 47,
     "industryshowcase.ics.uci.edu": 25,
-    "informatics.ics.uci.edu": 1,
-    "insite.ics.uci.edu": 1,
-    "ipubmed.ics.uci.edu": 1,
-    "isg.ics.uci.edu": 193,
-    "jgarcia.ics.uci.edu": 41,
+    "informatics.ics.uci.edu": 2,
+    "insite.ics.uci.edu": 7,
+    "ipubmed.ics.uci.edu": 2,
+    "isg.ics.uci.edu": 214,
+    "jgarcia.ics.uci.edu": 42,
+    "kdd.ics.uci.edu": 2,
     "luci.ics.uci.edu": 6,
-    "mailman.ics.uci.edu": 6,
+    "mailman.ics.uci.edu": 19,
     "malek.ics.uci.edu": 3,
     "mcs.ics.uci.edu": 14,
+    "mdogucu.ics.uci.edu": 1,
     "mds.ics.uci.edu": 9,
-    "mhcid.ics.uci.edu": 22,
-    "mswe.ics.uci.edu": 10,
+    "mhcid.ics.uci.edu": 24,
+    "mlphysics.ics.uci.edu": 1,
+    "motifmap.ics.uci.edu": 1,
+    "mswe.ics.uci.edu": 13,
     "nalini.ics.uci.edu": 8,
-    "ngs.ics.uci.edu": 83,
+    "ngs.ics.uci.edu": 102,
     "oai.ics.uci.edu": 7,
-    "psearch.ics.uci.edu": 2,
-    "riscit.ics.uci.edu": 2,
-    "seal.ics.uci.edu": 9,
+    "pepito.proteomics.ics.uci.edu": 1,
+    "psearch.ics.uci.edu": 3,
+    "redmiles.ics.uci.edu": 1,
+    "riscit.ics.uci.edu": 3,
+    "scratch.proteomics.ics.uci.edu": 2,
+    "seal.ics.uci.edu": 43,
     "sherlock.ics.uci.edu": 8,
     "stairs.ics.uci.edu": 4,
     "stat.ics.uci.edu": 13,
     "student-council.ics.uci.edu": 7,
     "summeracademy.ics.uci.edu": 6,
-    "tastier.ics.uci.edu": 1,
+    "tad.ics.uci.edu": 1,
+    "tastier.ics.uci.edu": 2,
     "tutoring.ics.uci.edu": 5,
     "ugradforms.ics.uci.edu": 1,
-    "unite.ics.uci.edu": 1,
-    "vision.ics.uci.edu": 216,
-    "wics.ics.uci.edu": 46,
-    "www-db.ics.uci.edu": 11,
-    "www.cs.uci.edu": 8,
-    "www.ics.uci.edu": 1061,
-    "www.informatics.ics.uci.edu": 1,
-    "www.informatics.uci.edu": 1333,
-    "www.stat.uci.edu": 8,
-    "xtune.ics.uci.edu": 6
+    "unite.ics.uci.edu": 10,
+    "vision.ics.uci.edu": 231,
+    "wics.ics.uci.edu": 241,
+    "www-db.ics.uci.edu": 25,
+    "www.cs.uci.edu": 9,
+    "www.ics.uci.edu": 3651,
+    "www.informatics.ics.uci.edu": 2,
+    "www.informatics.uci.edu": 2225,
+    "www.stat.uci.edu": 12,
+    "xtune.ics.uci.edu": 7
   }
 }

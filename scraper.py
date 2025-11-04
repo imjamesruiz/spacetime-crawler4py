@@ -87,13 +87,24 @@ def extract_next_links(url, resp):
             return []
         try:
             content_length = int(resp.raw_response.headers.get("Content-Length", 0))
-            if content_length > 2_000_000:  # skip very large pages
+            if content_length > 5_000_000:  # skip very large pages >5 MB
                 return []
         except ValueError:
             pass
 
+    # skip any compressed files
+    if any(ext in url.lower() for ext in (".tgz", ".tar", ".gz", ".zip")):
+        return []
+
+
     try:
-        # Parse HTML safely
+        # parse HTML
+        content = resp.raw_response.content
+        # Hard cutoff for files that don't report Content-Length but are still huge
+        if len(content) > 5_000_000:
+            print(f"[SKIP] {url} too large ({len(content)} bytes, no header)")
+            return []
+
         soup = BeautifulSoup(resp.raw_response.content, "html.parser")
         for s in soup(["script", "style", "noscript"]):
             s.decompose()
@@ -129,6 +140,12 @@ def extract_next_links(url, resp):
 
     except Exception as e:
         print(f"[extract_next_links] Error parsing {url}: {e}")
+
+    try:
+        if len(words) < 100 and len(soup.find_all("a")) > 100:
+            return []
+    except Exception:
+        pass
 
     return next_links
 
@@ -181,6 +198,11 @@ def is_valid(url):
         ]):
             return False
 
+        # no infinite traps
+        if len(url) > 2000 or url.count('/') > 12:
+            return False
+
+
         return True
 
     except Exception as e:
@@ -188,7 +210,7 @@ def is_valid(url):
         return False
 
 
-def finalize_crawl():
+def verify_crawl():
     """
     Called manually after the crawl completes to save final results.
     """

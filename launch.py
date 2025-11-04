@@ -24,3 +24,6 @@ if __name__ == "__main__":
     parser.add_argument("--config_file", type=str, default="config.ini")
     args = parser.parse_args()
     main(args.config_file, args.restart)
+
+    from scraper import verify_crawl
+    verify_crawl()
